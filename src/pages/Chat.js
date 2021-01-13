@@ -25,9 +25,11 @@ export default function Chat(props) {
   async function fetchBlogs() {
     try {
       const blogData = await API.graphql(graphqlOperation(listBlogs))
-      const blogs = blogData.data.listBlogss.items
+      const blogs = blogData.data.listBlogs.items
       setBlogs(blogs)
-    } catch (err) { console.log('error fetching blogs') }
+    } catch (err) { 
+        console.log('error fetching blogs') 
+      }
   }
    
   function setInput(key, value) {      	
